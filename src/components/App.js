@@ -11,17 +11,15 @@ import history from '../history';
 
 const App = () => {
   return (
-    <div>
+    <div className="container" id="app-root">
       <Router history={history}>
         <Header/>
-        <div className="ui main container" style={{marginTop:"7em"}}>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/personal" exact component={Personal} />
-            <Route path="/resume" exact component={Resume} />
-            <Route path="/contact" exact component={Contact} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/personal" exact component={Personal} />
+          <Route path="/resume" exact component={Resume} />
+          <Route path="/contact" exact component={Contact} />
+        </Switch>
       </Router>
     </div>
   )

@@ -2,53 +2,92 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class Header extends React.Component{
-  onButtonClick = () => {
-
+  state = {
+    sections: {
+      "Home": {
+        "path": "/",
+        "icon": "hand-spock-o",
+        "color": "primary"
+      },
+      "Resume": {
+        "path": "/resume",
+        "icon": "diamond",
+        "color": "info"
+      },
+      "Personal": {
+        "path": "/personal",
+        "icon": "id-badge",
+        "color": "wanrning"
+      }
+    },
+    menuActive: false
   }
 
-  render = () => {
-    const pathname = this.props.location.pathname
+  onBurgerClick = (event) => {
+    const current = this.state.menuActive;
+    this.setState({menuActive: !current});
+  }
+
+  renderNavbarMenu = () => {
+    const sections = this.state.sections;
 
     return (
-      <div className="header header-fixed unselectable header-animated">
-
-        <div className="header-brand">
-          <div className="nav-item no-hover">
-            <h6 className="title">PBM</h6>
-          </div>
+      <div className={`navbar-menu ${this.state.menuActive ? "is-active": ""}`}>
+        <div className="navbar-start">
+          {
+            Object.keys(sections).map(k => (
+              <Link to={sections[k]["path"]} className="navbar-item" key={k}>
+                <span className={`icon has-text-${sections[k]["color"]}`}>
+                  <i className={`fa fa-${sections[k]["icon"]}`}></i>
+                </span>
+                <span>{k}</span>
+              </Link>
+            ))
+          }
         </div>
-
-        <div className="header-nav" id="header-menu">
-          <div className="nav-left">
-            <div className="nav-item text-center toggle-hover">
-              <Link to="/"
-                className={`item ${pathname === '/' ? 'active': ''}`}
-              >
-                Home
-              </Link>
-            </div>
-            <div className="nav-item text-center toggle-hover">
-              <Link to="/resume"
-                className={`item ${pathname === '/resume' ? 'active': ''}`}
-              >
-                Resume
-              </Link>
-            </div>
-            <div className="nav-item text-center toggle-hover">
-              <Link to="/personal"
-                className={`item ${pathname === '/personal' ? 'active': ''}`}
-              >
-                Personal
-              </Link>
-            </div>
-          </div>
-          <div className="nav-right">
-            <div className="nav-item text-center toggle-hover">
-              Contact
-            </div>
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <span className="icon has-text-danger">
+              <i className="fa fa-envelope-o"></i>
+            </span>
+            <span>Contact</span>
           </div>
         </div>
       </div>
+    )
+  }
+
+  renderBurger = () => {
+    return (
+      <a role="button" aria-label="menu"
+        className={`navbar-burger burger ${this.state.menuActive ? "is-active": ""}`}
+        aria-expanded="false" data-target="navbarOptions"
+        onClick={this.onBurgerClick}>
+        {Object.keys(this.state.sections).map(key => <span key={key} aria-hidden="true"></span>)}
+      </a>
+    )
+  }
+
+  renderNavbarBrand = () => {
+    return (
+      <div className="navbar-brand">
+        <Link to="/" className="navbar-item">
+          <img src={require('../files/pbm_icon.png')} />
+        </Link>
+        <div className="navbar-item">Ben Moser's Site</div>
+        {this.renderBurger()}
+      </div>
+    )
+  }
+
+  render = () => {
+    return (
+      <nav className="navbar is-fixed-top" id="navbar">
+        <div className="container">
+          {this.renderNavbarBrand()}
+          {this.renderNavbarMenu()}
+        </div>
+      </nav>
     )
   }
 }
