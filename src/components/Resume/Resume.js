@@ -4,13 +4,21 @@ import { connect } from 'react-redux';
 import SectionHero from '../shared/SectionHero';
 import ResumeExperience from './ResumeExperience';
 import ResumeSkill from './ResumeSkill';
+import ResumeEducation from './ResumeEducation';
 
-import { fetchResumeExperience, fetchResumeSkills, fetchAppSection } from '../../actions';
+import {
+  fetchResumeExperience,
+  fetchResumeSkills,
+  fetchResumeEducation,
+  fetchAppSection
+} from '../../actions';
 
 class Resume extends Component{
   componentDidMount = () => {
     this.props.fetchResumeSkills();
     this.props.fetchResumeExperience();
+    this.props.fetchResumeEducation();
+
     this.props.fetchAppSection("Resume");
   }
 
@@ -82,6 +90,28 @@ class Resume extends Component{
           })}
         </div>
       )
+    } else {
+      return <div>Loading Skills</div>
+    }
+  }
+
+  renderEducation = () => {
+    if (this.props.education) {
+      const {education} = this.props;
+      return (
+        <div className="content">
+          <h2 className={this.textColor()}>Education</h2>
+          {education.map((ed, index) => {
+            return <ResumeEducation
+              education={ed}
+              key={index}
+              color={this.textColor()}
+              />
+          })}
+        </div>
+      )
+    } else {
+      return <div>Loading Education</div>
     }
   }
 
@@ -100,6 +130,8 @@ class Resume extends Component{
           <hr className="hr" />
           {this.renderExperience()}
           <hr className="hr" />
+          {this.renderEducation()}
+          <hr className="hr" />
           {this.renderSkills()}
         </section>
       </div>
@@ -111,11 +143,17 @@ const mapStateToProps = state => {
   return {
     experience: state.experience,
     skills: state.skills,
+    education: state.education,
     section: state.appSections["Resume"]
   }
 }
 
 export default connect(
   mapStateToProps,
-  {fetchResumeExperience, fetchResumeSkills, fetchAppSection}
+  {
+    fetchResumeExperience,
+    fetchResumeSkills,
+    fetchAppSection,
+    fetchResumeEducation
+  }
 )(Resume);

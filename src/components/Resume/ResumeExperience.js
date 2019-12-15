@@ -6,7 +6,7 @@ const ResumeExperience = (props) => {
   return (
     <div className="content">
       <h4 className={props.color}>{experience.name}</h4>
-      <h6 className="has-text-grey-light">
+      <h6>
         <span className="has-text-grey">{`${experience.position}`}</span>
         <span className="has-text-grey-light">{` | ${experience.dates}`}</span>
       </h6>
