@@ -13,28 +13,27 @@ class Resume extends React.Component{
   }
 
   onSectionTitleClick = (event) => {
-    console.log(event.target.id);
+    // console.log(event.target.id);
   }
 
   renderSkills = () => {
     if (this.props.skills) {
       return <Skills skills={this.props.skills}/>
     } else {
-      console.log("no skills");
     }
   }
 
   renderExperience = () => {
     if (this.props.experience) {
-      console.log("experience available");
-      console.log(this.props.experience);
+      // console.log("experience available");
+      // console.log(this.props.experience);
       return (
         this.props.experience.map(exp =>
           <CompanyExperience key={exp.id} info={exp}></CompanyExperience>
         )
     )
     } else {
-      console.log("no experience");
+      // console.log("no experience");
     }
   }
 

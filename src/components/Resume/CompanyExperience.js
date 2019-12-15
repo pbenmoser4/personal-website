@@ -2,7 +2,7 @@ import React from 'react';
 
 const CompanyExperience = (props) => {
   const info = props.info;
-  console.log(info);
+  // console.log(info);
 
   return (
     <div className="ui segments">

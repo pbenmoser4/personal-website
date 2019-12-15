@@ -90,3 +90,21 @@ export const skills = [
     "data": ["Mac and Windows OS", "Microsoft Office Suite", "G Suite", "Sketch", "Atlassian Suite (Jira, Confluence)", "Aha!"]
   }
 ]
+
+export const appSections = {
+  "Home": {
+    "path": "/",
+    "icon": "hand-spock-o",
+    "color": "primary"
+  },
+  "Resume": {
+    "path": "/resume",
+    "icon": "diamond",
+    "color": "info"
+  },
+  "Personal": {
+    "path": "/personal",
+    "icon": "id-badge",
+    "color": "wanrning"
+  }
+}
