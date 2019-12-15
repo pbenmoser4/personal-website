@@ -2,27 +2,33 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { fetchAppSections } from '../actions';
+import {
+  fetchAppSections,
+  fetchMenuStatus,
+  toggleMenuStatus,
+  setMenuStatus
+} from '../actions';
 
 class Header extends React.Component{
-  state = {
-    menuActive: false
-  }
-
   componentDidMount = () => {
-    this.props.fetchAppSections()
+    this.props.fetchAppSections();
+    this.props.fetchMenuStatus();
   }
 
   onBurgerClick = (event) => {
-    const current = this.state.menuActive;
-    this.setState({menuActive: !current});
+    this.props.toggleMenuStatus();
+  }
+
+  closeMenu = () => {
+    this.props.setMenuStatus(false);
   }
 
   renderBurger = () => {
+    const menuIsActive = this.props.app.menu.isActive;
     if (this.props.appSections){
       return (
         <div role="button" aria-label="menu"
-          className={`navbar-burger burger ${this.state.menuActive ? "is-active": ""}`}
+          className={`navbar-burger burger ${menuIsActive ? "is-active": ""}`}
           aria-expanded="false" data-target="navbarOptions"
           onClick={this.onBurgerClick}>
           {Object.keys(this.props.appSections).map(key => <span key={key} aria-hidden="true"></span>)}
@@ -38,7 +44,12 @@ class Header extends React.Component{
       const sections = this.props.appSections;
       return (
         Object.keys(sections).map(k => (
-          <Link to={sections[k]["path"]} className="navbar-item" key={k}>
+          <Link
+            to={sections[k]["path"]}
+            className="navbar-item"
+            onClick={this.closeMenu}
+            key={k}
+          >
             <span className={`icon has-text-${sections[k]["color"]}`}>
               <i className={`fa fa-${sections[k]["icon"]}`}></i>
             </span>
@@ -52,8 +63,9 @@ class Header extends React.Component{
   }
 
   renderNavbarMenu = () => {
+    const menuIsActive = this.props.app.menu.isActive;
     return (
-      <div className={`navbar-menu ${this.state.menuActive ? "is-active": ""}`}>
+      <div className={`navbar-menu ${menuIsActive ? "is-active": ""}`}>
         <div className="navbar-start">
           {this.renderNavbarMenuLinks()}
         </div>
@@ -95,13 +107,17 @@ class Header extends React.Component{
 
 const mapStateToProps = state => {
   return ({
-    appSections: state.appSections
+    appSections: state.appSections,
+    app: state.app
   })
 }
 
 export default connect(
   mapStateToProps,
   {
-    fetchAppSections
+    fetchAppSections,
+    fetchMenuStatus,
+    toggleMenuStatus,
+    setMenuStatus
   }
 )(withRouter(Header));

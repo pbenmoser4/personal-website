@@ -15,7 +15,7 @@ class Personal extends Component {
       <div className="container">
         <SectionHero
           section={this.props.section}
-          title="Hello, World!"
+          title="About Me!"
           subtitle="Welcome to Ben Moser's personal website."
         />
         <section className="section">
@@ -27,6 +27,7 @@ class Personal extends Component {
             <figure className="image is-128x128">
               <img className="is-square" src="https://i.imgur.com/R7cxu39.gif" alt="Swanson"/>
             </figure>
+            <p>JK. This section is under construction</p>
           </div>
         </section>
       </div>
