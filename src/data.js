@@ -21,8 +21,8 @@ export const experience = [
     "dates": "September 2017 - May 2018",
     "details": [
       "Developed detailed strategic overview of CloudMine’s competitive environment for sales, product, and executive use",
-      "Worked with engineering teams to execute on product roadmap in line with customer needs",
-      "Interfaced with industry experts as head of analyst relations"
+      "Worked with engineering teams to integrate customer feedback into product development lifecycle",
+      "Led all analyst relations with organizations such as Gartner and Forrester"
     ]
   },
   {
@@ -67,27 +67,27 @@ export const skills = [
   {
     "id": 1,
     "name": "Management Experience",
-    "data": ["Team Leadership", "Data-Driven Feedback", "Execution"]
+    "details": ["Team Leadership", "Data-Driven Feedback", "Execution"]
   },
   {
     "id": 2,
     "name": "Product Management",
-    "data": ["Machine Learning Projects", "Agile Development", "User Research", "Market Analysis", "UI/UX Design"]
+    "details": ["Machine Learning Projects", "Agile Development", "User Research", "Market Analysis", "UI/UX Design"]
   },
   {
     "id": 3,
     "name": "Presentation Skills",
-    "data": ["Content Creation", "Publis Speaking", "Technical Demonstration", "Webinars"]
+    "details": ["Content Creation", "Publis Speaking", "Technical Demonstration", "Webinars"]
   },
   {
     "id": 4,
     "name": "Programming Skills",
-    "data": ["Python", "HTML", "Javascript", "node.js", "React.js", "Redux"]
+    "details": ["Python", "HTML", "Javascript", "node.js", "React.js", "Redux"]
   },
   {
     "id": 5,
     "name": "Compute Skills",
-    "data": ["Mac and Windows OS", "Microsoft Office Suite", "G Suite", "Sketch", "Atlassian Suite (Jira, Confluence)", "Aha!"]
+    "details": ["Mac and Windows OS", "Microsoft Office Suite", "G Suite", "Sketch", "Atlassian Suite (Jira, Confluence)", "Aha!"]
   }
 ]
 
@@ -108,3 +108,40 @@ export const appSections = {
     "color": "warning",
   }
 }
+
+export const education = [
+  {
+    "name": "University of Virginia",
+    "location": "Charlottesville, VA",
+    "degrees": [
+      {
+        "name": "B.S. in Financial Mathematics, American History",
+        "awards": ["Echols Scholar"],
+        "dates": "2008 - 2012",
+        "addtionalSource": ""
+      }
+    ]
+  },
+  {
+    "name": "Additional Learning and Certificates",
+    "location": "Various Sources",
+    "degrees": [
+      {
+        "name": "Neural Networks and Deep Learning - deeplearning.ai",
+        "awards": [],
+        "dates": "October 2019",
+        "additionalSource": "Coursera"
+      }, {
+        "name": "Machine Learning - Stanford University",
+        "awards": [],
+        "dates": "September 2019",
+        "additionalSource": "Coursera"
+      }, {
+        "name": "Applied Plotting, Charting & Data Representation in Python - U. of Michigan",
+        "awards": [],
+        "dates": "January 2019",
+        "additionalSource": "Coursera"
+      }
+    ]
+  }
+]
