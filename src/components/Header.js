@@ -21,12 +21,12 @@ class Header extends React.Component{
   renderBurger = () => {
     if (this.props.appSections){
       return (
-        <a role="button" aria-label="menu"
+        <div role="button" aria-label="menu"
           className={`navbar-burger burger ${this.state.menuActive ? "is-active": ""}`}
           aria-expanded="false" data-target="navbarOptions"
           onClick={this.onBurgerClick}>
           {Object.keys(this.props.appSections).map(key => <span key={key} aria-hidden="true"></span>)}
-        </a>
+        </div>
       )
     } else {
       return <div>Loading...</div>
@@ -73,7 +73,7 @@ class Header extends React.Component{
     return (
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
-          <img src={require('../files/pbm_icon.png')} />
+          <img src={require('../files/pbm_icon.png')} alt="logo"/>
         </Link>
         <div className="navbar-item">Ben Moser's Site</div>
         {this.renderBurger()}

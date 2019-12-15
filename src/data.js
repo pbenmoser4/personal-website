@@ -95,16 +95,16 @@ export const appSections = {
   "Home": {
     "path": "/",
     "icon": "hand-spock-o",
-    "color": "primary"
+    "color": "info",
   },
   "Resume": {
     "path": "/resume",
     "icon": "diamond",
-    "color": "info"
+    "color": "primary",
   },
   "Personal": {
     "path": "/personal",
     "icon": "id-badge",
-    "color": "wanrning"
+    "color": "warning",
   }
 }
