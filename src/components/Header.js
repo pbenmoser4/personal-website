@@ -27,10 +27,13 @@ class Header extends React.Component{
     const menuIsActive = this.props.app.menu.isActive;
     if (this.props.appSections){
       return (
-        <div role="button" aria-label="menu"
+        <div role="button"
+          aria-label="menu"
           className={`navbar-burger burger ${menuIsActive ? "is-active": ""}`}
-          aria-expanded="false" data-target="navbarOptions"
-          onClick={this.onBurgerClick}>
+          aria-expanded="false"
+          data-target="navbarOptions"
+          onClick={this.onBurgerClick}
+        >
           {Object.keys(this.props.appSections).map(key => <span key={key} aria-hidden="true"></span>)}
         </div>
       )
@@ -43,23 +46,48 @@ class Header extends React.Component{
     if (this.props.appSections) {
       const sections = this.props.appSections;
       return (
-        Object.keys(sections).map(k => (
-          <Link
-            to={sections[k]["path"]}
-            className="navbar-item"
-            onClick={this.closeMenu}
-            key={k}
-          >
-            <span className={`icon has-text-${sections[k]["color"]}`}>
-              <i className={`fa fa-${sections[k]["icon"]}`}></i>
-            </span>
-            <span>{k}</span>
-          </Link>
-        ))
+        Object.keys(sections).map(k => {
+          if (k !== "Contact"){
+            return <Link
+              to={sections[k]["path"]}
+              className="navbar-item"
+              onClick={this.closeMenu}
+              key={k}
+            >
+              <span className={`icon has-text-${sections[k]["color"]}`}>
+                <i className={`fa fa-${sections[k]["icon"]}`}></i>
+              </span>
+              <span>{k}</span>
+            </Link>
+          } else {
+            return null
+          }
+        })
       )
     } else {
       return <div>Loading...</div>
     }
+  }
+
+  renderContact = () => {
+    if (this.props.appSections["Contact"]) {
+      const contact = this.props.appSections["Contact"]
+      return (
+        <Link
+          to={contact["path"]}
+          className="navbar-item"
+          onClick={this.closeMenu}
+        >
+          <span className="icon has-text-danger">
+            <i className="fa fa-envelope-o"></i>
+          </span>
+          <span>Contact</span>
+        </Link>
+      )
+    } else {
+      return <div>Nothing</div>
+    }
+
   }
 
   renderNavbarMenu = () => {
@@ -70,12 +98,7 @@ class Header extends React.Component{
           {this.renderNavbarMenuLinks()}
         </div>
         <div className="navbar-end">
-          <div className="navbar-item">
-            <span className="icon has-text-danger">
-              <i className="fa fa-envelope-o"></i>
-            </span>
-            <span>Contact</span>
-          </div>
+          {this.renderContact()}
         </div>
       </div>
     )
