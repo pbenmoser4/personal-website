@@ -5,7 +5,6 @@ import {
   FETCH_APP_SECTION,
   FETCH_RESUME_EDUCATION,
   FETCH_MENU_STATUS,
-  UPDATE_MENU_STATUS,
   SET_MENU_STATUS
 } from './types';
 
@@ -57,7 +56,7 @@ export const fetchMenuStatus = () => async dispatch => {
 export const toggleMenuStatus = () => (dispatch, getState) => {
   const currentMenuStatus = getState().app.menu.isActive;
   dispatch({
-    type: UPDATE_MENU_STATUS,
+    type: SET_MENU_STATUS,
     payload: !currentMenuStatus
   })
 }

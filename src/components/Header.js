@@ -25,11 +25,11 @@ class Header extends React.Component{
 
   renderBurger = () => {
     const menuIsActive = this.props.app.menu.isActive;
-    if (this.props.appSections){
+    if (this.props.appSections && this.props.app){
       return (
         <div role="button"
           aria-label="menu"
-          className={`navbar-burger burger ${menuIsActive ? "is-active": ""}`}
+          className={`navbar-burger burger ${menuIsActive ? "is-active": ''}`}
           aria-expanded="false"
           data-target="navbarOptions"
           onClick={this.onBurgerClick}
@@ -59,8 +59,6 @@ class Header extends React.Component{
               </span>
               <span>{k}</span>
             </Link>
-          } else {
-            return null
           }
         })
       )
@@ -84,10 +82,7 @@ class Header extends React.Component{
           <span>Contact</span>
         </Link>
       )
-    } else {
-      return <div>Nothing</div>
     }
-
   }
 
   renderNavbarMenu = () => {
