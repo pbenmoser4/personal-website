@@ -107,6 +107,11 @@ export const appSections = {
     "icon": "id-badge",
     "color": "warning",
   },
+  "Projects": {
+    "path": "/projects",
+    "icon": "bolt",
+    "color": "success"
+  },
   "Contact": {
     "path": "/contact",
     "icon": "envelope-o",
