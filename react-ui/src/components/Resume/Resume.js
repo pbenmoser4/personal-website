@@ -43,13 +43,14 @@ class Resume extends Component{
         <h2 className={this.textColor()}>Professional Overview</h2>
         <p>
           Developed social media app after teaching myself how to code,
-          convinced a few Stanford CS Masters students to drop out and work
-          with me to build it. Won multiple industry awards and led a team
-          of pre-sales engineers for a young health-tech startup; directly
-          responsible for over 50% of closed revenue from technical
-          perspective. Led a multi-continental team to develop the first
-          machine learning product for a Forbes Cloud 100 unicorn ($1B+
-          valuation), served as their resident machine learning expert.
+          convinced a few Stanford CS Masters students to drop out and work with
+          me to build it. Won multiple industry awards and led a team of
+          pre-sales engineers for health-tech startup building consumer health
+          and clinical trial application software; directly responsible for over
+          50% of closed revenue from technical perspective. Led a
+          multi-continental team as product manager to develop the first machine
+          learning product for a Forbes Cloud 100 unicorn ($1B+ valuation),
+          served as their resident machine learning expert.
           </p>
       </div>
     )

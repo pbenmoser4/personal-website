@@ -22,7 +22,8 @@ export const experience = [
     "details": [
       "Developed detailed strategic overview of CloudMine’s competitive environment for sales, product, and executive use",
       "Worked with engineering teams to integrate customer feedback into product development lifecycle",
-      "Led all analyst relations with organizations such as Gartner and Forrester"
+      "Led all analyst relations with organizations such as Gartner and Forrester",
+      "Head of analyst relations, led CloudMine to be a Leader in Forrester’s 2017 Enterprise Health Cloud Wave report",
     ]
   },
   {
@@ -46,7 +47,7 @@ export const experience = [
     "location": "Los Angeles, CA",
     "dates": "December 2013 - April 2015",
     "details": [
-      "Let product, UI/UX design, and engineering of Bubble: The Social Network That Pops",
+      "Led product, UI/UX design, and engineering of Bubble: The Social Network That Pops",
       "Started and led the Bubble engineering team; worked as full-time engineer",
       "Created, refined, and pitched multiple investor presentations for seed round funding"
     ]
@@ -82,7 +83,7 @@ export const skills = [
   {
     "id": 4,
     "name": "Programming Skills",
-    "details": ["Python", "HTML", "Javascript", "node.js", "React.js", "Redux"]
+    "details": ["Python (Pandas, BeautifulSoup)", "HTML", "node.js", "React.js", "React-Redux", "Front-End Development"]
   },
   {
     "id": 5,
@@ -133,9 +134,39 @@ export const education = [
     ]
   },
   {
+    "name": "The Haverford School",
+    "location": "Haverford, PA",
+    "degrees": [
+      {
+        "name": "High School Diploma",
+        "awards": ["Cum Laude Society", "President - Signet Society"],
+        "dates": "2004 - 2008",
+        "additionalSource": "",
+      }
+    ]
+  },
+  {
     "name": "Additional Learning and Certificates",
     "location": "Various Sources",
     "degrees": [
+      {
+        "name": "PMC-II",
+        "awards": [],
+        "dates": "December, 2019",
+        "additionalSource": "Pragmatic Institute",
+      },
+      {
+        "name": "Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization - deeplearning.ai",
+        "awards": [],
+        "dates": "November, 2019",
+        "additionalSource": "Coursera"
+      },
+      {
+        "name": "Structuring Machine Learning Projects - deeplearning.ai",
+        "awards": [],
+        "dates": "November, 2019",
+        "additionalSource": "Coursera",
+      },
       {
         "name": "Neural Networks and Deep Learning - deeplearning.ai",
         "awards": [],
@@ -153,5 +184,15 @@ export const education = [
         "additionalSource": "Coursera"
       }
     ]
+  }
+]
+
+export const projects = [
+  {
+    "name": "Numerology App",
+    "url": "http://pbm-numerology.herokuapp.com/",
+    "description": `A numerology app (work in progress) built using react.js,
+    and currently using semantic-ui-react, but in the process of switching over
+    to grommet. All logic designed by me, all readings written by Juno Jordan.`
   }
 ]

@@ -22,9 +22,30 @@ class Home extends Component {
           <div className="content is-medium">
             <p className="is-large">
               Hi there! I'm Ben Moser, and you've somehow found your way to my
-              personal website. Well done, whoever you are! I spent a lot of
-              time making the silly little icon in the header, and even more
-              coding it, so I hope you enjoy!
+              personal website. I spent a lot of time making the silly little
+              icon in the header, and even more coding it, so I hope you enjoy!
+            </p>
+            <p>
+              I'm a product manager from Philadelphia currently living in
+              beautiful New York City, where, to quote Liz Lemon,
+              <a href="https://www.youtube.com/watch?v=knnIEY3bmQI" target="_blank">
+                {` "it's where dreams are *made up*, there's nothing you *can do*"`}
+              </a>. I currently work at <a href="https://www.collibra.com/" target="_blank">{`Collibra `}</a>
+              as product manager of Smart Catalog initiatives. Every day, I get
+              to work with a ton of smart, motivated people, and I spend a good
+              deal of my time thinking about Machine Learning, a personal passion.
+              I also help out as talent for some of their <a href="https://www.youtube.com/watch?v=bgDMwg3boAM&feature=youtu.be" target="_blank">{`Marketing Material`}</a>,
+              trying not to stutter whenever possible.
+            </p>
+            <p>
+              In my free time, I spend a lot of time running (I ran my first
+              marathon in 2019), and building out my own personal
+              <a href="/projects">{` projects`}</a> using <a href="https://reactjs.org/" target="_blank">{`react.js `}</a>
+              when I feel like front-end dev, and <a href="https://www.python.org/" target="_blank">{`python `}</a>
+              when I feel like crunching numbers. I also spend an inordinate
+              amount of time watching and tracking the Philadelphia Flyers,
+              which gives me a fun opportunity to play around with Data Science
+              using python.
             </p>
             <p>
               I'm using this site as a staging area for everything about me.

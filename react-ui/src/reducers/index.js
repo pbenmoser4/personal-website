@@ -5,11 +5,13 @@ import skillsReducer from './skillsReducer';
 import appSectionsReducer from './appSectionsReducer';
 import educationReducer from './educationReducer';
 import appReducer from './appReducer';
+import projectsReducer from './projectsReducer';
 
 export default combineReducers({
   experience: experienceReducer,
   skills: skillsReducer,
   appSections: appSectionsReducer,
   education: educationReducer,
-  app: appReducer
+  app: appReducer,
+  projects: projectsReducer
 });

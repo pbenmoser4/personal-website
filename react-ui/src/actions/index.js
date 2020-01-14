@@ -5,10 +5,11 @@ import {
   FETCH_APP_SECTION,
   FETCH_RESUME_EDUCATION,
   FETCH_MENU_STATUS,
-  SET_MENU_STATUS
+  SET_MENU_STATUS,
+  FETCH_PROJECTS
 } from './types';
 
-import { skills, experience, appSections, education } from '../data';
+import { skills, experience, appSections, education, projects } from '../data';
 
 export const fetchResumeExperience = () => async dispatch => {
   dispatch({
@@ -66,4 +67,11 @@ export const setMenuStatus = status => {
     type: SET_MENU_STATUS,
     payload: status
   }
+}
+
+export const fetchProjects = () => dispatch => {
+  dispatch({
+    type: FETCH_PROJECTS,
+    payload: projects
+  })
 }
