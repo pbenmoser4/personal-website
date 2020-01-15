@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { fetchAppSection } from '../actions';
 
@@ -40,10 +41,14 @@ class Home extends Component {
             <p>
               In my free time, I spend a lot of time running (I ran my first
               marathon in 2019), and building out my own personal
-              <a href="/projects">{` projects`}</a> using <a href="https://reactjs.org/" target="_blank">{`react.js `}</a>
-              when I feel like front-end dev, and <a href="https://www.python.org/" target="_blank">{`python `}</a>
+              <Link to="/projects">{` projects`}</Link> using <a href="https://reactjs.org/" target="_blank">{`react.js `}</a>
+              when I feel like front-end dev (this site also uses <a href="https://bulma.io/" target="_blank">{`bulma`}</a>),
+              and <a href="https://www.python.org/" target="_blank">{`python `}</a>
               when I feel like crunching numbers. I also spend an inordinate
-              amount of time watching and tracking the Philadelphia Flyers,
+              amount of time watching and tracking
+              <a href="https://www.youtube.com/watch?v=DjobyMt0LeU" target="_blank">{` the`}</a>
+              <a href="https://www.youtube.com/watch?v=ILcEJhThIoU" target="_blank">{` Philadelphia`}</a>
+              <a href="https://www.youtube.com/watch?v=xSX0FfmpiyY" target="_blank">{` Flyers`}</a>,
               which gives me a fun opportunity to play around with Data Science
               using python.
             </p>
